@@ -2,4 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
-
+my_file.var.bcf
+P8_S14_GSTLRi.sam
+P8_S14_GSTLRi.sorted.bam
+map_P8_S14_GSTLRi.bam
+my_file.raw.bcf
+my_file.var-final.vcf
