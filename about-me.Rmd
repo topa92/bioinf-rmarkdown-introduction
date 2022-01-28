@@ -1,114 +1,100 @@
 ---
 title: "About Me"
-author: "Insert Name Here"
+author: "Sofia Marques Hill"
 output:
-  html_document:
-    toc: yes
   word_document:
     toc: yes
   pdf_document:
+    toc: yes
+  html_document:
     toc: yes
 bibliography: references.bib
 ---
 
 # Who I am and where I came from
 
-First off, replace "Insert Name Here" in the YAML header with your name.
-It has to be surrounded by double quotation marks. 
-Briefly tell us a little background about yourself, and how
-you ended up becoming a student at CSU and taking this class.
-Put in a hypertext link to your undergraduate institution.  
+I am from Uruguay, a little country of South America located between Brazil and Argentina. I grew up in a farm and when I started high school I moved to Uruguay's capital, Montevideo. My parents showed me how great is to work as an Agronomist and that's why in 2010, with 17 years old, I started this career at the [University of the Republic of Uruguay](http://www.fagro.edu.uy/). One fun fact is that the career starts with a 2 week visit to a farmer establishment and I had to go to a family farm of vegetable growers that where so hardworking and humble that gave me a new perspective of what farmers challenges may be.
 
-Include a numbered list of your top-four favorite leisure activities, like this:
+I end the career thinking of specializing in cattle production, but I found a good job as a seed certified technician in the [National Institution of Seeds](https://www.inase.uy/). This job required me to visit crop fields and check variety purity and presence of forbidden weeds. I also had to check every machinery used by farmers to be clean from seeds before its use. In harvest season I ended up driving 6200 miles per month. I loved working there for three years, I learned tons of things but I wanted more challenges in my life and I couldn't see myself growing there.
 
-1. My favorite
-1. Second favorite
-1. third favorite
-1. fourth favorite
+In 2019 I started my master in Plant Sciences at the same University, but in association with the [National Institution of Agricultural Research](http://www.inia.uy/). There I performed the first herbicide resistance survey of weeds in the country and was when I realized I liked researcher work a lot. My former adivsor knows my actual advisor, Dr.Todd Gaines, and it was because of that contact that I applied for my actual scholarship. Dr. Gaines lab is in charge of the [International Weeds Genomic Consortium](https://www.weedgenomics.org/) that aims to improve genomic resources of weeds to enhance their use in research and control technologies development. My PhD projects are framed in this big objectives. I am still in my first year of the PhD program and I am already learning a lot. One of my main project is to build a reference genome of *Cirsium arvense* and use it to identify the genomic region that determines sex in this species.
 
+The activities that I enjoy the most are:
 
-Include a picture (jpg or png) of yourself, to get some practice in inserting
-images into RMarkdown. See the example to see how that can be done.
-Note that JPEGs that include EXIF information might be incorrectly rotated.
-That is OK if you can't figure out how to fix it.
+1.  Explore nature. I am enjoying the hikes that are available near by. Uruguay is quite flat.
 
+2.  Singing, I was part of a choir back in Uruguay and I loved it.
 
+3.  Hanging out with friends and family. This usually involves drinking mate. Yes, all together from the same straw. What can I say, traditions are traditions.
 
+```{r me_pic, echo=FALSE, out.width="300px"}
+knitr::include_graphics("images/MATE.jpeg", auto_pdf = TRUE)
+```
 
+4.  Playing cards or boarding games.
 
 # Research Interests
 
-Brief description of your research interests.
+I am interested in weed control management and plant evolution and biology. I think that basic science is crucial for understanding weeds better, and developing more sustainable technologies or techniques for weed control. My objective in these coming years is to learn as much as I can of molecular biology, mainly genomics. This would give me the skills for research about weed evolution and spreading, and herbicide resistance.
 
 ## Influential papers
 
-Describe two papers that have been very influential in your
-research.  The main purpose of this is learning how to
-cite literature in RMarkdown.  You will have to add the citations
-to `references.bib` in BibTeX format, and then also cite them.
+I really don't have any influential papers in my head. But if I have to choose two papers I'd say that @kreiner2018population is a great review that led me to think about genomics as a tool for understunding and managing weeds.
 
-An easy way to get the paper in BibTeX format is to find it on
-Google Scholar.  Then, under the paper's link, click on the big 
-fat quotation marks, and then choose the BibTex link at the bottom
-of the page.  Then copy the contents into `references.bib`.  For example
-you might paste this into `references.bib`.
-```
-@article{richardson1997bayesian,
-  title={On Bayesian analysis of mixtures with an unknown number of components (with discussion)},
-  author={Richardson, Sylvia and Green, Peter J},
-  journal={Journal of the Royal Statistical Society: series B (statistical methodology)},
-  volume={59},
-  number={4},
-  pages={731--792},
-  year={1997},
-  publisher={Wiley Online Library}
-}
-```
-Note the string before the comma on the first line.  That is the cite key.
-Once you have done that, you can cite it by including `@richardson1997bayesian`
-if you don't want the name in parenthesis, like, "As @richardson1997bayesian introduced in
-their landmark paper."  On the other hand, you can use `[@richardson1997bayesian]` if
-you do want it all in parentheses, like, "Reversible jump MCMC has been previously applied
-to the analysis of mixtures [@richardson1997bayesian]."
-
+Another paper that I really liked was @brusa2021needle that shows the applicability of genomics and molecular tools for detecting herbicide resistance in seed lots.
 
 ## The mathematics behind my research
 
-It is easy to write complex mathematics using a mathematical typesetting
-engine called TeX.  Write two displayed equations that are relevant
-to your work.  For a quick primer on TeX and LaTeX you can
-download [this cheatsheet](https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf)
-and then fiddle with including things between the double dollar signs below:
-$$
-\cos\theta + i\sin\theta = e^{i\theta}
-$$
-or here:
-$$
-\lim_{n\rightarrow \infty} \frac{1}{n}\sum_{i=1}^n X_i = EX
+In herbicide resistance research dose response curves are frequently used to determine resistance of a certain biotype or population. The response usually follows log-logistic function of 3 parameters represented as: $$
+f(x) = 0 + \frac{d-0}{1+\exp(b(\log(x)-\log(e)))}      
 $$
 
 ## My computing experience
 
-Describe any experience you have with any programming languages.
-Include a snippet of code in two different languages using a
-non-evaluated code block.  This can be something you have previously
-written, or, if you don't have any, then find and copy a few lines of code
-off the web.
+I almost have no experience with coding. I used the terminal of mac computer to use bowtie2 and manage bam files and create vcf files. I think the language is bash. The following is a part of the script I used for creating vcf file from sorted.
+
+```{bash, eval=FALSE}
+#generate variant likelihoods, where "-g" is for generating genotype likelihoods in BCF output and "-f" is indicating fasta reference line. 
+
+samtools mpileup -g -f my_file.fasta my_file.sorted.bam > my_file.raw.bcf
+
+#SNP Calling with bcftools, where "-O b" is output type BCF, "-v" is variant only and "-c" is for using the original consensus calling method. 
+
+bcftools call -O b -vc my_file.raw.bcf > my_file.var.bcf 
+ 
+#SNP filtering with vcfutils.pl
+
+bcftools view my_file.var.bcf | vcfutils.pl varFilter -> my_file.var-final.vcf
+
+```
+
+I also used R for statystical analysis in previous research.
+
+```{r, eval=FALSE}
+library(drc)
+DRData<-read.csv("Glifosato_DR.csv",  sep = ",")
+summary(DRData)
+head(DRData)
+DRLL3<- drm(Biomasa~Dosis,Poblacion,data=DRData,fct=LL.3(), na.action=na.omit, type="continuous")
+plot(DRLL3, type = c("average"), col = c(1, 5, 3, 4, 2), xlab="Glyphosate (g ae ha-1)", ylab="Biomasa (g)")
+summary(DRLL3)
+modelFit(DRLL3)
+
+```
 
 ## What I hope to get out of this class
 
-Give me a bullet list of three things:
-
-* This
-* That
-* Another
+-   Learn how to organize and keep track of bioinformatic work progress.
+-   Understand more of languages and coding.
+-   Learn where to find guidance and basic tools for working with genomes.
 
 # Evaluating some R code
 
-Here, please evaluate some R code to make a plot or a figure.
-The goal here is just to realize that you can imbed R code
-within fenced code blocks and get the output rendered into
-the document.
+```{r}
+data("mtcars")
+library(tidyverse)
+ggplot(data = mtcars, mapping = aes(x = mpg, y = wt)) +
+  geom_point()
+```
 
 # Citations
-
